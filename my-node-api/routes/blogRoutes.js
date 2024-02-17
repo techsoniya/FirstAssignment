@@ -1,10 +1,10 @@
-// routes/blogRoutes.js
+
 const express = require('express');
 const router = express.Router();
 const validationMiddleware = require('../middleware/validationMiddleware');
 const Blog = require('../models/Blog');
 
-// Get all blogs
+
 router.get('/', validationMiddleware, async (req, res) => {
   try {
     const blogs = await Blog.find();
@@ -15,7 +15,6 @@ router.get('/', validationMiddleware, async (req, res) => {
   }
 });
 
-// Create a new blog
 router.post('/create', validationMiddleware, async (req, res) => {
   try {
     const { title, content, author } = req.body;
@@ -29,7 +28,6 @@ router.post('/create', validationMiddleware, async (req, res) => {
   }
 });
 
-// Get a specific blog by author ID
 router.get('/:authorId', validationMiddleware, async (req, res) => {
   try {
     const authorId = req.params.authorId;
