@@ -1,10 +1,10 @@
-// routes/authRoutes.js
+
 const express = require('express');
 const router = express.Router();
 const validationMiddleware = require('../middleware/validationMiddleware');
 const Author = require('../models/Author');
 
-// Login endpoint
+
 router.post('/login', validationMiddleware, async (req, res) => {
   try {
     const { username, password } = req.body;
@@ -21,7 +21,7 @@ router.post('/login', validationMiddleware, async (req, res) => {
   }
 });
 
-// Register endpoint
+
 router.post('/register', validationMiddleware, async (req, res) => {
   try {
     const { username, password } = req.body;
